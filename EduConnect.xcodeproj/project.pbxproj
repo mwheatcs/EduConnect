@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34648A872AFC9AE800853267 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34648A862AFC9AE800853267 /* GoogleService-Info.plist */; };
+		34648A8A2AFC9FC100853267 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 34648A892AFC9FC100853267 /* FirebaseFirestore */; };
+		34648A8C2AFC9FC100853267 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 34648A8B2AFC9FC100853267 /* FirebaseInAppMessaging-Beta */; };
+		34648A8F2AFCA70000853267 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 34648A8E2AFCA70000853267 /* FirebaseAuth */; };
+		34648A922AFCBACC00853267 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A912AFCBACC00853267 /* AuthenticationView.swift */; };
+		34648A982AFCBDF200853267 /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A972AFCBDF200853267 /* SignInEmailView.swift */; };
+		34648A9A2AFCC2A500853267 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A992AFCC2A500853267 /* AuthenticationManager.swift */; };
+		34648A9C2AFCC76300853267 /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A9B2AFCC76300853267 /* SignUpEmailView.swift */; };
 		34C0D3E82AFC8D4B00FBB3F5 /* EduConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C0D3E72AFC8D4B00FBB3F5 /* EduConnectApp.swift */; };
-		34C0D3EA2AFC8D4B00FBB3F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C0D3E92AFC8D4B00FBB3F5 /* ContentView.swift */; };
 		34C0D3EC2AFC8D4C00FBB3F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C0D3EB2AFC8D4C00FBB3F5 /* Assets.xcassets */; };
 		34C0D3EF2AFC8D4C00FBB3F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C0D3EE2AFC8D4C00FBB3F5 /* Preview Assets.xcassets */; };
 		34C0D3F92AFC8D4C00FBB3F5 /* EduConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C0D3F82AFC8D4C00FBB3F5 /* EduConnectTests.swift */; };
@@ -34,9 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34648A862AFC9AE800853267 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34648A912AFCBACC00853267 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		34648A972AFCBDF200853267 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
+		34648A992AFCC2A500853267 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		34648A9B2AFCC76300853267 /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
 		34C0D3E42AFC8D4B00FBB3F5 /* EduConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0D3E72AFC8D4B00FBB3F5 /* EduConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduConnectApp.swift; sourceTree = "<group>"; };
-		34C0D3E92AFC8D4B00FBB3F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34C0D3EB2AFC8D4C00FBB3F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34C0D3EE2AFC8D4C00FBB3F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34C0D3F42AFC8D4C00FBB3F5 /* EduConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EduConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34648A8A2AFC9FC100853267 /* FirebaseFirestore in Frameworks */,
+				34648A8F2AFCA70000853267 /* FirebaseAuth in Frameworks */,
+				34648A8C2AFC9FC100853267 /* FirebaseInAppMessaging-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +85,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34648A8D2AFCA70000853267 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34648A962AFCBCF800853267 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				34648A912AFCBACC00853267 /* AuthenticationView.swift */,
+				34648A972AFCBDF200853267 /* SignInEmailView.swift */,
+				34648A992AFCC2A500853267 /* AuthenticationManager.swift */,
+				34648A9B2AFCC76300853267 /* SignUpEmailView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		34C0D3DB2AFC8D4B00FBB3F5 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +110,7 @@
 				34C0D3F72AFC8D4C00FBB3F5 /* EduConnectTests */,
 				34C0D4012AFC8D4C00FBB3F5 /* EduConnectUITests */,
 				34C0D3E52AFC8D4B00FBB3F5 /* Products */,
+				34648A8D2AFCA70000853267 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +127,9 @@
 		34C0D3E62AFC8D4B00FBB3F5 /* EduConnect */ = {
 			isa = PBXGroup;
 			children = (
+				34648A962AFCBCF800853267 /* Auth */,
+				34648A862AFC9AE800853267 /* GoogleService-Info.plist */,
 				34C0D3E72AFC8D4B00FBB3F5 /* EduConnectApp.swift */,
-				34C0D3E92AFC8D4B00FBB3F5 /* ContentView.swift */,
 				34C0D3EB2AFC8D4C00FBB3F5 /* Assets.xcassets */,
 				34C0D3ED2AFC8D4C00FBB3F5 /* Preview Content */,
 			);
@@ -143,6 +177,11 @@
 			dependencies = (
 			);
 			name = EduConnect;
+			packageProductDependencies = (
+				34648A892AFC9FC100853267 /* FirebaseFirestore */,
+				34648A8B2AFC9FC100853267 /* FirebaseInAppMessaging-Beta */,
+				34648A8E2AFCA70000853267 /* FirebaseAuth */,
+			);
 			productName = EduConnect;
 			productReference = 34C0D3E42AFC8D4B00FBB3F5 /* EduConnect.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +254,9 @@
 				Base,
 			);
 			mainGroup = 34C0D3DB2AFC8D4B00FBB3F5;
+			packageReferences = (
+				34648A882AFC9FC100853267 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 34C0D3E52AFC8D4B00FBB3F5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +275,7 @@
 			files = (
 				34C0D3EF2AFC8D4C00FBB3F5 /* Preview Assets.xcassets in Resources */,
 				34C0D3EC2AFC8D4C00FBB3F5 /* Assets.xcassets in Resources */,
+				34648A872AFC9AE800853267 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +300,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34C0D3EA2AFC8D4B00FBB3F5 /* ContentView.swift in Sources */,
 				34C0D3E82AFC8D4B00FBB3F5 /* EduConnectApp.swift in Sources */,
+				34648A922AFCBACC00853267 /* AuthenticationView.swift in Sources */,
+				34648A9C2AFCC76300853267 /* SignUpEmailView.swift in Sources */,
+				34648A9A2AFCC2A500853267 /* AuthenticationManager.swift in Sources */,
+				34648A982AFCBDF200853267 /* SignInEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +628,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		34648A882AFC9FC100853267 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.17.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		34648A892AFC9FC100853267 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34648A882AFC9FC100853267 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		34648A8B2AFC9FC100853267 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34648A882AFC9FC100853267 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		34648A8E2AFCA70000853267 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34648A882AFC9FC100853267 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 34C0D3DC2AFC8D4B00FBB3F5 /* Project object */;
 }
