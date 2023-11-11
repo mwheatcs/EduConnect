@@ -12,26 +12,27 @@ final class SignUpEmailViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var passwordRepeat = ""
+    //TODO: Add data types and initialize with firestore on separate or this view
     
-    func signUp() {
+    func signUp() -> Bool{
         guard !email.isEmpty else {
             print("No email provided")
-            return
+            return true
         }
         
         guard email.contains("@") else {
             print("Invalid email provided")
-            return
+            return true
         }
         
         guard !password.isEmpty else {
             print("No password provided")
-            return
+            return true
         }
         
         guard password == passwordRepeat else {
             print("Passwords do not match")
-            return
+            return true
         }
     
         Task {
@@ -39,17 +40,22 @@ final class SignUpEmailViewModel: ObservableObject {
                 let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
                 print("Successfully signed up ")
                 print(returnedUserData)
+                return false
             } catch {
                 print("Error: \(error)")
+                return true
             }
         }
+        return true
     }
 }
 
 
 struct SignUpEmailView: View {
+    @EnvironmentObject private var showSignInView: AuthDataResultModel
+
     @StateObject private var viewModel = SignUpEmailViewModel()
-    
+
     var body: some View {
         VStack {
             TextField("Email Address", text: $viewModel.email)
@@ -66,7 +72,7 @@ struct SignUpEmailView: View {
                 .background(Color.gray.opacity(0.4))
                     .cornerRadius(10)
             Button {
-                viewModel.signUp()
+                showSignInView.NoAuth = viewModel.signUp()
             } label : { Text("Sign Up")                .font(.headline)
                     .foregroundColor(.white)
                     .frame(height: 55)
@@ -78,11 +84,4 @@ struct SignUpEmailView: View {
     }
 }
 
-struct SignUpEmailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack{
-            SignUpEmailView()
-        }
-    }
-}
 

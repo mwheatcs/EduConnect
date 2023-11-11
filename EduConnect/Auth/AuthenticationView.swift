@@ -7,8 +7,13 @@
 
 import SwiftUI
 
+class Authenticated: ObservableObject {
+    public var NoAuth: Bool = true
+}
 
 struct AuthenticationView: View {
+    @EnvironmentObject private var showSignInView: Authenticated
+    
     var body: some View {
         VStack {
             Spacer()
@@ -22,7 +27,7 @@ struct AuthenticationView: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.blue)
                 .cornerRadius(10)
-            }
+            }.environmentObject(showSignInView)
             Text("OR")
             NavigationLink{
                 SignUpEmailView()
@@ -34,17 +39,10 @@ struct AuthenticationView: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.green)
                 .cornerRadius(10)
-            }
+            }.environmentObject(showSignInView)
             Spacer()
         }.navigationTitle("Login or Register")
         Spacer()
     }
 }
 
-struct AuthenticationView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack{
-            AuthenticationView()
-        }
-    }
-}

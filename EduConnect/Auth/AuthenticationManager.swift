@@ -8,10 +8,20 @@
 import SwiftUI
 import FirebaseAuth
 
-struct AuthDataResultModel {
-    let uid: String
-    let email: String?
-    let photoUrl: String?
+class AuthDataResultModel: ObservableObject {
+    var uid: String
+    var email: String?
+    var photoUrl: String?
+    
+    public var unAuthenticated: Bool{
+        get{
+            return uid == ""
+        }
+        
+        set{
+            print(newValue)
+        }
+    }
     
     init(user: User) {
         self.uid = user.uid
@@ -21,9 +31,7 @@ struct AuthDataResultModel {
 }
 
 final class AuthenticationManager {
-    static let shared = AuthenticationManager()
-    
-    private init() {}
+    static var shared: AuthenticationManager = AuthenticationManager()
     
     func createUser(email: String, password: String) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
@@ -33,5 +41,12 @@ final class AuthenticationManager {
     func signInUser(email: String, password: String) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
         return AuthDataResultModel(user: authDataResult.user)
+    }
+    
+    func getAuthenticatedUser() throws -> AuthDataResultModel {
+        guard let authDataResult = Auth.auth().currentUser else {
+            throw URLError(.badServerResponse)
+        }
+        return AuthDataResultModel(user: authDataResult)
     }
 }

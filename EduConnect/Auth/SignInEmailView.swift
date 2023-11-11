@@ -12,25 +12,30 @@ final class SignInEmailViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     
-    func signIn() {
+
+    func signIn() -> Bool {
         guard !email.isEmpty, !password.isEmpty else {
             print("No email or password found.")
-            return
+            return true
         }
         Task {
             do {
                 let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
                 print("Success")
-                print(returnedUserData)
+                return false
             } catch {
                 print("Error: \(error)")
+                return true
             }
         }
+        return true
     }
 }
 
 
 struct SignInEmailView: View {
+    @EnvironmentObject private var showSignInView: Authenticated
+    
     @StateObject private var viewModel = SignInEmailViewModel()
     
     var body: some View {
@@ -45,7 +50,7 @@ struct SignInEmailView: View {
                 .background(Color.gray.opacity(0.4))
                     .cornerRadius(10)
             Button {
-                viewModel.signIn()
+                showSignInView.NoAuth = viewModel.signIn()
             } label : { Text("Sign In")                .font(.headline)
                     .foregroundColor(.white)
                     .frame(height: 55)
@@ -56,12 +61,3 @@ struct SignInEmailView: View {
         }.navigationTitle("Email Sign-In")  
     }
 }
-
-struct SignInEmailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack{
-            SignInEmailView()
-        }
-    }
-}
-

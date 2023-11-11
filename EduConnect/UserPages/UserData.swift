@@ -5,4 +5,8 @@
 //  Created by Mathew Wheatley on 11/9/23.
 //
 
-import Foundation
+import SwiftUI
+
+class UserData: ObservableObject {
+    
+}

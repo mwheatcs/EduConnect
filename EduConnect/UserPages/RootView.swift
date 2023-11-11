@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct RootView: View {
-    @State private var showSignInView: Bool = false
+    @EnvironmentObject private var user: AuthDataResultModel
     
-    @Environment private var user: AuthDataResultModel
-
     var body: some View {
         VStack {
             //TODO: Add image
@@ -28,22 +26,26 @@ struct RootView: View {
             
             //TODO: Add other user information
             Button {
-                showSignInView = true
-            } label : { Text("Sign Out")                .font(.headline)
+                user.uid = ""
+            } label : { Text("Sign Out")
+                    .font(.headline)
                     .foregroundColor(.white)
                     .frame(height: 55)
                     .frame(maxWidth: .infinity)
                     .background(Color.red)
                     .cornerRadius(10)}
             Spacer()
-        }.onAppear(
-            let authuser = AuthenticationManager.shared.si
-        )
+        }.onAppear{
+            let authUser = try?AuthenticationManager.shared.getAuthenticatedUser()
+            user.uid = authUser?.uid ?? " "
+            user.email = authUser?.email
+            user.photoUrl = authUser?.photoUrl
+        }
         .navigationTitle("User Information")
-            .fullScreenCover(isPresented: $showSignInView, content: {
+        .fullScreenCover(isPresented: $user.unAuthenticated, content: {
                 NavigationStack{
                     AuthenticationView()
-                }
+                }.environmentObject(user)
             })
     }
 }

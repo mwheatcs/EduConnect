@@ -15,6 +15,7 @@
 		34648A982AFCBDF200853267 /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A972AFCBDF200853267 /* SignInEmailView.swift */; };
 		34648A9A2AFCC2A500853267 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A992AFCC2A500853267 /* AuthenticationManager.swift */; };
 		34648A9C2AFCC76300853267 /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A9B2AFCC76300853267 /* SignUpEmailView.swift */; };
+		34648A9F2AFCCDC300853267 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A9E2AFCCDC300853267 /* RootView.swift */; };
 		34C0D3E82AFC8D4B00FBB3F5 /* EduConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C0D3E72AFC8D4B00FBB3F5 /* EduConnectApp.swift */; };
 		34C0D3EC2AFC8D4C00FBB3F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C0D3EB2AFC8D4C00FBB3F5 /* Assets.xcassets */; };
 		34C0D3EF2AFC8D4C00FBB3F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C0D3EE2AFC8D4C00FBB3F5 /* Preview Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		34648A972AFCBDF200853267 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		34648A992AFCC2A500853267 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		34648A9B2AFCC76300853267 /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
+		34648A9E2AFCCDC300853267 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		34C0D3E42AFC8D4B00FBB3F5 /* EduConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0D3E72AFC8D4B00FBB3F5 /* EduConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduConnectApp.swift; sourceTree = "<group>"; };
 		34C0D3EB2AFC8D4C00FBB3F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		34648A9D2AFCCDB800853267 /* UserPages */ = {
+			isa = PBXGroup;
+			children = (
+				34648A9E2AFCCDC300853267 /* RootView.swift */,
+			);
+			path = UserPages;
+			sourceTree = "<group>";
+		};
 		34C0D3DB2AFC8D4B00FBB3F5 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		34C0D3E62AFC8D4B00FBB3F5 /* EduConnect */ = {
 			isa = PBXGroup;
 			children = (
+				34648A9D2AFCCDB800853267 /* UserPages */,
 				34648A962AFCBCF800853267 /* Auth */,
 				34648A862AFC9AE800853267 /* GoogleService-Info.plist */,
 				34C0D3E72AFC8D4B00FBB3F5 /* EduConnectApp.swift */,
@@ -302,6 +313,7 @@
 			files = (
 				34C0D3E82AFC8D4B00FBB3F5 /* EduConnectApp.swift in Sources */,
 				34648A922AFCBACC00853267 /* AuthenticationView.swift in Sources */,
+				34648A9F2AFCCDC300853267 /* RootView.swift in Sources */,
 				34648A9C2AFCC76300853267 /* SignUpEmailView.swift in Sources */,
 				34648A9A2AFCC2A500853267 /* AuthenticationManager.swift in Sources */,
 				34648A982AFCBDF200853267 /* SignInEmailView.swift in Sources */,
