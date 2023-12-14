@@ -13,9 +13,31 @@ struct ListingView: View {
     
     var body: some View {
         VStack {
-            Text("Available Listings")
-                .foregroundColor(.black)
-                .font(.system(size: 20, weight: .bold, design: .rounded))
+            HStack {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "line.3.horizontal.decrease")
+                        .frame(width: 50, height: 50)
+
+                }
+                Spacer()
+                Text("Available Listings")
+                    .foregroundColor(.black)
+                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                Spacer()
+                Button {
+                    
+                } label: {
+                    Image(systemName: "plus.app")
+                        .frame(width: 50, height: 50)
+                }
+            }
+            Button {
+                
+            } label: {
+                
+            }
             List {
                 ForEach(manager.listings) {
                     listing in

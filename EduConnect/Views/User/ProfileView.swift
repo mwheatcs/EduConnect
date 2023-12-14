@@ -33,9 +33,7 @@ struct ProfileView: View {
                     .frame(width: 350)
                 Rectangle().frame(width: 350, height: 1)
                 Text("Name")
-                
-                Spacer()
-                
+                                
                 TextField("Grade", text: $grade)
                     .foregroundColor(.black)
                     .textFieldStyle(.plain)
@@ -44,8 +42,6 @@ struct ProfileView: View {
                     .frame(width: 350)
                 Rectangle().frame(width: 350, height: 1)
                 Text("Grade")
-                
-                Spacer()
                 
                 TextField("Age", text: $age)
                     .foregroundColor(.black)
@@ -56,8 +52,6 @@ struct ProfileView: View {
                 Rectangle().frame(width: 350, height: 1)
                 Text("Age")
                 
-                Spacer()
-                
                 TextField("Zip Code", text: $zip)
                     .foregroundColor(.black)
                     .textFieldStyle(.plain)
@@ -67,8 +61,6 @@ struct ProfileView: View {
                 Rectangle().frame(width: 350, height: 1)
                 Text("ZIP Code")
                 
-                Spacer()
-                Spacer()
                 Spacer()
                 
                 Button {

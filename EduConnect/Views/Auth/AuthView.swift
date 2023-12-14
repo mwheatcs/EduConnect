@@ -71,7 +71,6 @@ struct AuthView: View {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if error != nil {
                 print(error!.localizedDescription)
-                print(error)
             }
             print(result)
         }
