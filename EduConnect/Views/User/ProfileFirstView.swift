@@ -12,40 +12,29 @@ struct ProfileFirstView: View {
     @State private var name = ""
     @State private var zip = ""
     @State private var age = ""
-    @State private var grade = ""
+    @State private var grade : Grade = .K
     
     
     var body: some View {
         NavigationView {
             ZStack {
                 
-                RoundedRectangle(cornerRadius: 30, style: .continuous)
-                    .foregroundStyle(.linearGradient(colors: [.blue, .green], startPoint: .topTrailing, endPoint: .bottomLeading))
-                    .frame(width: 1000, height: 1000)
-                
                 VStack(spacing: 20) {
                     Text("Profile Setup")
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .font(.system(size: 40, weight: .bold, design: .rounded))
                         .offset(x: -50, y: -100)
                     
                     TextField("Name", text: $name)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .textFieldStyle(.plain)
                         .textInputAutocapitalization(.never)
 
                     Rectangle().frame(width: 350, height: 1)
                     
-                    TextField("Grade", text: $grade)
-                        .foregroundColor(.white)
-                        .textFieldStyle(.plain)
-                        .textInputAutocapitalization(.never)
-                        .keyboardType(.numberPad)
-                    
-                    Rectangle().frame(width: 350, height: 1)
                     
                     TextField("Age", text: $age)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .textFieldStyle(.plain)
                         .textInputAutocapitalization(.never)
                         .keyboardType(.numberPad)
@@ -53,12 +42,21 @@ struct ProfileFirstView: View {
                     Rectangle().frame(width: 350, height: 1)
 
                     TextField("Zip Code", text: $zip)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .textFieldStyle(.plain)
                         .textInputAutocapitalization(.never)
                         .keyboardType(.numberPad)
 
                     Rectangle().frame(width: 350, height: 1)
+                    
+                    HStack{
+                        Text("Grade")
+                        Picker ("Grade",selection: $grade) {
+                            ForEach(Grade.allCases, id: \.id) { value in
+                                Text(value.description).tag(value)
+                            }
+                        }
+                    }
                     
                     Button {
                         setupProfile()
@@ -74,7 +72,6 @@ struct ProfileFirstView: View {
                 .frame(width:350)
                 }
             }
-            .ignoresSafeArea()
         }
     func setupProfile(){
         guard name != "" else {
@@ -86,22 +83,16 @@ struct ProfileFirstView: View {
             return
         }
         
-        guard grade != "" else {
-            print("Grade cannot be empty")
-            return
-        }
-        
         guard zip != "" else {
             print("Zip cannot be empty")
             return
         }
         
         let ageNumber = Int(age) ?? 0
-        let gradeNumber = Int(grade) ?? 0
         let zipNumber = Int(zip) ?? 00000
         
-        let user = UserProfile(name, ageNumber, gradeNumber, zipNumber)
+        let user = UserProfile(name, ageNumber, grade, zipNumber, "")
         
         manager.updateProfile(profile: user)
-}
+    }
 }

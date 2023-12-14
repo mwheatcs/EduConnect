@@ -21,9 +21,19 @@ struct ScheduleView: View {
                     ForEach(manager.tutoringSessions) {
                         session in
                         VStack(alignment: .leading) {
-                            Text("Student: \(session.student)").font(.largeTitle)
+                            var subjects = {() -> String in
+                                var out = ""
+                                for subject in session.subjects {
+                                    out += subject.humanReadableDescription + " "
+                                }
+                                return out
+                            }()
+                            
+                            Text("Student: \(manager.getUserProfile(fromID: session.student).name)").font(.largeTitle)
                             Text("Start: \(Date(timeIntervalSince1970: Double(session.start)).formatted())")
                             Text("End: \(Date(timeIntervalSince1970: Double(session.end)).formatted())")
+                            Text("Subjects: \(subjects)")
+                            Text(String(format: "Price: %.2f", session.totalCost))
                             Button {
                                 //Cancel Request
                             } label: {
@@ -40,9 +50,18 @@ struct ScheduleView: View {
                     ForEach(manager.learningSessions) {
                         session in
                         VStack(alignment: .leading) {
-                            Text("Tutor: \(session.tutor)").font(.largeTitle)
+                            var subjects = {() -> String in
+                                var out = ""
+                                for subject in session.subjects {
+                                    out += subject.humanReadableDescription + " "
+                                }
+                                return out
+                            }()
+                            Text("Tutor: \(manager.getUserProfile(fromID: session.tutor).name)").font(.largeTitle)
                             Text("Start: \(Date(timeIntervalSince1970: Double(session.start)).formatted())")
                             Text("End: \(Date(timeIntervalSince1970: Double(session.end)).formatted())")
+                            Text("Subjects: \(subjects)")
+                            Text(String(format: "Price: %.2f", session.totalCost))
                             Button {
                                 //Cancel Request
                             } label: {
@@ -60,3 +79,4 @@ struct ScheduleView: View {
             }
     }
 }
+

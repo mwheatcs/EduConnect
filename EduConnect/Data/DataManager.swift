@@ -11,8 +11,10 @@ import FirebaseAuth
 
 class Manager: ObservableObject {
     @Published var listings: [ListingData] = []
+    @Published var myListings: [ListingData] = []
     @Published var tutoringSessions: [SessionData] = []
     @Published var learningSessions: [SessionData] = []
+    @Published var userProfiles: [String: UserProfile] = [:]
     @Published var loggedInUserData: UserProfile?
     @Published var userID: String = ""
     @Published var loggedOut : Bool = true
@@ -20,8 +22,8 @@ class Manager: ObservableObject {
     
     init() {
         Auth.auth().addStateDidChangeListener{auth, user in
-            print("Auth State Changed")
             if user != nil {
+                self.fetchUserProfiles()
                 self.fetchUser()
                 self.fetchListings()
                 self.fetchSessions()
@@ -36,9 +38,41 @@ class Manager: ObservableObject {
         }
     }
     
+    func createSession(sessionData: SessionData){
+        let db = Firestore.firestore()
+        
+        let document = db.collection("Session").document()
+
+        do {
+            try document.setData(from: sessionData)
+        } catch {
+            print("Failed to create session!")
+        }
+
+    }
+    
+    func removeListing(docID: String) {
+        let db = Firestore.firestore()
+        
+        let document = db.collection("Listings").document(docID)
+
+        document.delete()
+    }
+    
+    func createListing(listingData: ListingData) {
+        let db = Firestore.firestore()
+        
+        let document = db.collection("Listings").document()
+        do {
+            try document.setData(from: listingData)
+        } catch {
+            print("Failed to create listing!")
+        }
+    }
+    
     func updateProfile(profile: UserProfile) {
         let db = Firestore.firestore()
-
+        
         let collection = db.collection("Profile")
         let document = collection.document(self.userID)
         do {
@@ -50,7 +84,7 @@ class Manager: ObservableObject {
     
     func fetchUser() {
         let db = Firestore.firestore()
-
+        
         guard let id = Auth.auth().currentUser?.uid else {
             print("No User to get!")
             return
@@ -68,56 +102,83 @@ class Manager: ObservableObject {
                 if document.documentID == id {
                     self.loggedInUserData = try? document.data(as: UserProfile.self)
                     self.noProfile = self.loggedInUserData == nil
+                    return
                 }
             }
-
+            
         }
         print("No profile exists for authenticated user")
+        self.noProfile = self.loggedInUserData == nil
         return
     }
     
-    func fetchListings() {
-        listings.removeAll()
-        let db = Firestore.firestore()
-        
-        db.collection("Listings").addSnapshotListener { (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else {
-                print("No Listings")
-                return
-            }
-            
-            self.listings = documents.compactMap { (queryDocumentSnapshot) -> ListingData? in
-                return try? queryDocumentSnapshot.data(as: ListingData.self)
-            }
-        }
+    func getUserProfile(fromID: String) -> UserProfile {
+        return self.userProfiles[fromID] ?? UserProfile.noProfile
     }
     
-    func fetchSessions() {
-        tutoringSessions.removeAll()
-        learningSessions.removeAll()
-        
+    func fetchUserProfiles() {
         let db = Firestore.firestore()
         
-        guard let name = self.loggedInUserData?.name else {
-            print("No Profile")
-            return
-        }
-        db.collection("Sessions").addSnapshotListener { (querySnapshot, error) in
+        
+        db.collection("Profile").addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
-                print("No Listings")
+                print("No Profiles")
                 return
             }
             
             for document in documents {
-                if let sessionData = try?document.data(as: SessionData.self) {
-                    if sessionData.tutor == name {
-                        self.tutoringSessions.append(sessionData)
-                    } else if sessionData.student == name {
-                        self.learningSessions.append(sessionData)
+                self.userProfiles[document.documentID] = try? document.data(as: UserProfile.self)
+            }
+        }
+    }
+    
+    func fetchListings() {
+        let db = Firestore.firestore()
+        
+        db.collection("Listings").addSnapshotListener { (querySnapshot, error) in
+            self.listings.removeAll()
+            self.myListings.removeAll()
+            
+            guard let documents = querySnapshot?.documents else {
+                print("No Listings")
+                return
+            }
+            for document in documents {
+                if let listingData = try?document.data(as: ListingData.self) {
+                    if listingData.tutor == self.userID {
+                        self.myListings.append(listingData)
+                    }else {
+                        self.listings.append(listingData)
                     }
                 }
             }
         }
     }
+        func fetchSessions() {
+            let db = Firestore.firestore()
+            
+            db.collection("Session").addSnapshotListener { (querySnapshot, error) in
+                self.tutoringSessions.removeAll()
+                self.learningSessions.removeAll()
+                
+                guard let documents = querySnapshot?.documents else {
+                    print("No Listings")
+                    return
+                }
+                
+                for document in documents {
+                    if let sessionData = try?document.data(as: SessionData.self) {
+                        print(sessionData.tutor)
+                        print(sessionData.student)
+                        if sessionData.tutor == self.userID {
+                            self.tutoringSessions.append(sessionData)
+                            print("tutor")
+                        } else if sessionData.student == self.userID {
+                            self.learningSessions.append(sessionData)
+                            print("student")
+                        }
+                    }
+                }
+            }
+        }
 }
-    

@@ -9,20 +9,24 @@ import Foundation
 import FirebaseFirestore
 
 struct SessionData: Identifiable, Codable{
-    @DocumentID var id: String? = UUID().uuidString
+    @DocumentID var id: String?
     var tutor: String
     var student: String
     var start: Int
     var end: Int
     var rate: Float
-    var subject: String
+    var subjects: [Subject]
     
-    init(tutor: String, student: String, start: Int, end: Int, rate: Float, subject: String) {
+    var totalCost: Float {
+        return rate * Float(start - end) / 3600
+    }
+    
+    init(tutor: String, student: String, start: Int, end: Int, rate: Float, subjects: [Subject]) {
         self.tutor = tutor
         self.student = student
         self.start = start
         self.end = end
         self.rate = rate
-        self.subject = subject
+        self.subjects = subjects
     }
 }

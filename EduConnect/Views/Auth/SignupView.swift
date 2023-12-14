@@ -24,21 +24,21 @@ struct SignUpView: View {
                     Spacer()
                     
                     TextField("Email", text: $email)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                         .textFieldStyle(.plain)
                         .textInputAutocapitalization(.never)
 
                     Rectangle().frame(width: 350, height: 1)
                     
                     SecureField("Password", text: $password)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                         .textFieldStyle(.plain)
        
                     Rectangle().frame(width: 350, height: 1)
 
                     
                     SecureField("Confirm Password", text: $confirmPassword)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                         .textFieldStyle(.plain)
 
                     Rectangle().frame(width: 350, height: 1)
