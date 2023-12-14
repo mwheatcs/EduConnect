@@ -15,28 +15,26 @@ struct AuthView: View {
     var body: some View {
         NavigationView{
             ZStack {
-                
-                RoundedRectangle(cornerRadius: 30, style: .continuous)
-                    .foregroundStyle(.linearGradient(colors: [.blue, .green], startPoint: .topTrailing, endPoint: .bottomLeading))
-                    .frame(width: 1000, height: 1000)
-                
                 VStack(spacing: 20) {
-                    Text("Welcome")
-                        .foregroundColor(.white)
+                    Text("EduConnect")
+                        .foregroundColor(.green)
                         .font(.system(size: 40, weight: .bold, design: .rounded))
-                        .offset(x: -100, y: -100)
-                    
+                    Image("BookIcon")
+                        .background(.opacity(0))
+
+                    Spacer()
                     TextField("Email", text: $email)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .textFieldStyle(.plain)
                         .textInputAutocapitalization(.never)
+                        .offset(x: 20)
 
                     Rectangle().frame(width: 350, height: 1)
                     
                     SecureField("Password", text: $password)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .textFieldStyle(.plain)
-
+                        .offset(x: 20)
                     
                     Rectangle().frame(width: 350, height: 1)
                     
@@ -50,18 +48,15 @@ struct AuthView: View {
                             .background(
                                 RoundedRectangle(cornerRadius:10, style: .continuous).fill(.linearGradient(colors:[.green], startPoint: .top, endPoint: .bottomTrailing)))
                     }
-                    .padding(.top)
-                    .offset(y: 100)
                     
                     NavigationLink(destination: SignUpView()) {
                         Text("First time? Register here!")
                             .bold()
-                            .foregroundColor(.white)
+                            .foregroundColor(.blue)
                     }
+                    Spacer()
                 }
-                .frame(width:350)
             }
-            .ignoresSafeArea()
         }
     }
 
@@ -74,5 +69,14 @@ struct AuthView: View {
             }
             print(result)
         }
+    }
+}
+extension UIImage {
+    func imageWith(newSize: CGSize) -> UIImage {
+        let image = UIGraphicsImageRenderer(size: newSize).image { _ in
+            draw(in: CGRect(origin: .zero, size: newSize))
+        }
+        
+        return image.withRenderingMode(renderingMode)
     }
 }

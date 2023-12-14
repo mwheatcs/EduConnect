@@ -16,33 +16,29 @@ struct SignUpView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                
-                RoundedRectangle(cornerRadius: 30, style: .continuous)
-                    .foregroundStyle(.linearGradient(colors: [.blue, .green], startPoint: .topTrailing, endPoint: .bottomLeading))
-                    .frame(width: 1000, height: 1000)
-                
                 VStack(spacing: 20) {
+                    Spacer()
                     Text("Registration")
-                        .foregroundColor(.white)
+                        .foregroundColor(.green)
                         .font(.system(size: 40, weight: .bold, design: .rounded))
-                        .offset(x: -75, y: -100)
+                    Spacer()
                     
                     TextField("Email", text: $email)
-                        .foregroundColor(.white)
+                        .foregroundColor(.gray)
                         .textFieldStyle(.plain)
                         .textInputAutocapitalization(.never)
 
                     Rectangle().frame(width: 350, height: 1)
                     
                     SecureField("Password", text: $password)
-                        .foregroundColor(.white)
+                        .foregroundColor(.gray)
                         .textFieldStyle(.plain)
        
                     Rectangle().frame(width: 350, height: 1)
 
                     
                     SecureField("Confirm Password", text: $confirmPassword)
-                        .foregroundColor(.white)
+                        .foregroundColor(.gray)
                         .textFieldStyle(.plain)
 
                     Rectangle().frame(width: 350, height: 1)
@@ -57,13 +53,10 @@ struct SignUpView: View {
                             .background(
                                 RoundedRectangle(cornerRadius:10, style: .continuous).fill(.linearGradient(colors:[.green], startPoint: .top, endPoint: .bottomTrailing)))
                     }
-                    
-        
                 }
                 .frame(width:350)
                 }
             }
-            .ignoresSafeArea()
         }
     func register(){
         guard password == confirmPassword else {

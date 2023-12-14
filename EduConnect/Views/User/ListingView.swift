@@ -62,6 +62,13 @@ struct ListingView: View {
             }
         }
     }
+    
+    var AddListingView: some View{
+        VStack {
+            
+        }
+        
+    }
 }
 
 
