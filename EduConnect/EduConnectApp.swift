@@ -10,21 +10,18 @@ import FirebaseCore
 
 @main
 struct EduConnectApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var manager = Manager()
+    init() {
+        FirebaseApp.configure()
+    }
+
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                AuthenticationView()
+                Tab()
             }
         }
+        .environmentObject(manager)
+        
     }
 }
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-    return true
-  }
-}
-

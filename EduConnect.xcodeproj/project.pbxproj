@@ -7,32 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340B9CDF2B299F2E00B41E1D /* EduConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340B9CDE2B299F2E00B41E1D /* EduConnectTests.swift */; };
+		340B9CFC2B29A27700B41E1D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340B9CF62B29A27700B41E1D /* HomeView.swift */; };
+		340B9CFD2B29A27700B41E1D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340B9CF72B29A27700B41E1D /* ProfileView.swift */; };
+		340B9CFE2B29A27700B41E1D /* ListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340B9CF82B29A27700B41E1D /* ListingView.swift */; };
+		340B9CFF2B29A27700B41E1D /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340B9CF92B29A27700B41E1D /* ScheduleView.swift */; };
+		340B9D002B29A27700B41E1D /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340B9CFA2B29A27700B41E1D /* AlertsView.swift */; };
+		340B9D012B29A27700B41E1D /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340B9CFB2B29A27700B41E1D /* Tab.swift */; };
 		34648A872AFC9AE800853267 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34648A862AFC9AE800853267 /* GoogleService-Info.plist */; };
 		34648A8A2AFC9FC100853267 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 34648A892AFC9FC100853267 /* FirebaseFirestore */; };
 		34648A8C2AFC9FC100853267 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 34648A8B2AFC9FC100853267 /* FirebaseInAppMessaging-Beta */; };
 		34648A8F2AFCA70000853267 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 34648A8E2AFCA70000853267 /* FirebaseAuth */; };
-		34648A922AFCBACC00853267 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A912AFCBACC00853267 /* AuthenticationView.swift */; };
-		34648A982AFCBDF200853267 /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A972AFCBDF200853267 /* SignInEmailView.swift */; };
-		34648A9A2AFCC2A500853267 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A992AFCC2A500853267 /* AuthenticationManager.swift */; };
-		34648A9C2AFCC76300853267 /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A9B2AFCC76300853267 /* SignUpEmailView.swift */; };
-		34648A9F2AFCCDC300853267 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A9E2AFCCDC300853267 /* RootView.swift */; };
+		34648A9F2AFCCDC300853267 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34648A9E2AFCCDC300853267 /* AuthView.swift */; };
+		346DA9002B27D4AE008C2D78 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DA8FF2B27D4AE008C2D78 /* DataManager.swift */; };
+		346DA9022B27D4CE008C2D78 /* ListingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DA9012B27D4CE008C2D78 /* ListingData.swift */; };
+		346DA9042B27D543008C2D78 /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DA9032B27D543008C2D78 /* SessionData.swift */; };
+		3494700D2B2A319E00C441B6 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3494700C2B2A319E00C441B6 /* SignupView.swift */; };
+		349470112B2A4D5600C441B6 /* ProfileFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349470102B2A4D5600C441B6 /* ProfileFirstView.swift */; };
 		34C0D3E82AFC8D4B00FBB3F5 /* EduConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C0D3E72AFC8D4B00FBB3F5 /* EduConnectApp.swift */; };
 		34C0D3EC2AFC8D4C00FBB3F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C0D3EB2AFC8D4C00FBB3F5 /* Assets.xcassets */; };
 		34C0D3EF2AFC8D4C00FBB3F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C0D3EE2AFC8D4C00FBB3F5 /* Preview Assets.xcassets */; };
-		34C0D3F92AFC8D4C00FBB3F5 /* EduConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C0D3F82AFC8D4C00FBB3F5 /* EduConnectTests.swift */; };
-		34C0D4032AFC8D4C00FBB3F5 /* EduConnectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C0D4022AFC8D4C00FBB3F5 /* EduConnectUITests.swift */; };
-		34C0D4052AFC8D4C00FBB3F5 /* EduConnectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C0D4042AFC8D4C00FBB3F5 /* EduConnectUITestsLaunchTests.swift */; };
+		34E2E93B2B007C7D00A2462E /* UserProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E2E93A2B007C7D00A2462E /* UserProfileData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		34C0D3F52AFC8D4C00FBB3F5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34C0D3DC2AFC8D4B00FBB3F5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 34C0D3E32AFC8D4B00FBB3F5;
-			remoteInfo = EduConnect;
-		};
-		34C0D3FF2AFC8D4C00FBB3F5 /* PBXContainerItemProxy */ = {
+		340B9CE02B299F2E00B41E1D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 34C0D3DC2AFC8D4B00FBB3F5 /* Project object */;
 			proxyType = 1;
@@ -42,24 +41,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		340B9CDC2B299F2E00B41E1D /* EduConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EduConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		340B9CDE2B299F2E00B41E1D /* EduConnectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduConnectTests.swift; sourceTree = "<group>"; };
+		340B9CF62B29A27700B41E1D /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		340B9CF72B29A27700B41E1D /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		340B9CF82B29A27700B41E1D /* ListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingView.swift; sourceTree = "<group>"; };
+		340B9CF92B29A27700B41E1D /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		340B9CFA2B29A27700B41E1D /* AlertsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
+		340B9CFB2B29A27700B41E1D /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		34648A862AFC9AE800853267 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		34648A912AFCBACC00853267 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
-		34648A972AFCBDF200853267 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
-		34648A992AFCC2A500853267 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
-		34648A9B2AFCC76300853267 /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
-		34648A9E2AFCCDC300853267 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		34648A9E2AFCCDC300853267 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		346DA8FF2B27D4AE008C2D78 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		346DA9012B27D4CE008C2D78 /* ListingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingData.swift; sourceTree = "<group>"; };
+		346DA9032B27D543008C2D78 /* SessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
+		3494700C2B2A319E00C441B6 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		349470102B2A4D5600C441B6 /* ProfileFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFirstView.swift; sourceTree = "<group>"; };
 		34C0D3E42AFC8D4B00FBB3F5 /* EduConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0D3E72AFC8D4B00FBB3F5 /* EduConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduConnectApp.swift; sourceTree = "<group>"; };
 		34C0D3EB2AFC8D4C00FBB3F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34C0D3EE2AFC8D4C00FBB3F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		34C0D3F42AFC8D4C00FBB3F5 /* EduConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EduConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0D3F82AFC8D4C00FBB3F5 /* EduConnectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduConnectTests.swift; sourceTree = "<group>"; };
-		34C0D3FE2AFC8D4C00FBB3F5 /* EduConnectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EduConnectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0D4022AFC8D4C00FBB3F5 /* EduConnectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduConnectUITests.swift; sourceTree = "<group>"; };
 		34C0D4042AFC8D4C00FBB3F5 /* EduConnectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduConnectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		34E2E93A2B007C7D00A2462E /* UserProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		340B9CD92B299F2E00B41E1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34C0D3E12AFC8D4B00FBB3F5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,23 +84,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34C0D3F12AFC8D4C00FBB3F5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34C0D3FB2AFC8D4C00FBB3F5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		340B9CDD2B299F2E00B41E1D /* EduConnectTests */ = {
+			isa = PBXGroup;
+			children = (
+				340B9CDE2B299F2E00B41E1D /* EduConnectTests.swift */,
+			);
+			path = EduConnectTests;
+			sourceTree = "<group>";
+		};
+		340B9CF52B29A27700B41E1D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3494700F2B2A35BD00C441B6 /* User */,
+				3494700E2B2A35A300C441B6 /* Auth */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		34648A8D2AFCA70000853267 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,23 +111,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		34648A962AFCBCF800853267 /* Auth */ = {
+		3494700E2B2A35A300C441B6 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				34648A912AFCBACC00853267 /* AuthenticationView.swift */,
-				34648A972AFCBDF200853267 /* SignInEmailView.swift */,
-				34648A992AFCC2A500853267 /* AuthenticationManager.swift */,
-				34648A9B2AFCC76300853267 /* SignUpEmailView.swift */,
+				3494700C2B2A319E00C441B6 /* SignupView.swift */,
+				34648A9E2AFCCDC300853267 /* AuthView.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		34648A9D2AFCCDB800853267 /* UserPages */ = {
+		3494700F2B2A35BD00C441B6 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				34648A9E2AFCCDC300853267 /* RootView.swift */,
+				340B9CF62B29A27700B41E1D /* HomeView.swift */,
+				340B9CF72B29A27700B41E1D /* ProfileView.swift */,
+				340B9CF82B29A27700B41E1D /* ListingView.swift */,
+				340B9CF92B29A27700B41E1D /* ScheduleView.swift */,
+				340B9CFA2B29A27700B41E1D /* AlertsView.swift */,
+				340B9CFB2B29A27700B41E1D /* Tab.swift */,
+				349470102B2A4D5600C441B6 /* ProfileFirstView.swift */,
 			);
-			path = UserPages;
+			path = User;
 			sourceTree = "<group>";
 		};
 		34C0D3DB2AFC8D4B00FBB3F5 = {
@@ -119,6 +140,7 @@
 				34C0D3E62AFC8D4B00FBB3F5 /* EduConnect */,
 				34C0D3F72AFC8D4C00FBB3F5 /* EduConnectTests */,
 				34C0D4012AFC8D4C00FBB3F5 /* EduConnectUITests */,
+				340B9CDD2B299F2E00B41E1D /* EduConnectTests */,
 				34C0D3E52AFC8D4B00FBB3F5 /* Products */,
 				34648A8D2AFCA70000853267 /* Frameworks */,
 			);
@@ -128,8 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				34C0D3E42AFC8D4B00FBB3F5 /* EduConnect.app */,
-				34C0D3F42AFC8D4C00FBB3F5 /* EduConnectTests.xctest */,
-				34C0D3FE2AFC8D4C00FBB3F5 /* EduConnectUITests.xctest */,
+				340B9CDC2B299F2E00B41E1D /* EduConnectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,8 +158,8 @@
 		34C0D3E62AFC8D4B00FBB3F5 /* EduConnect */ = {
 			isa = PBXGroup;
 			children = (
-				34648A9D2AFCCDB800853267 /* UserPages */,
-				34648A962AFCBCF800853267 /* Auth */,
+				340B9CF52B29A27700B41E1D /* Views */,
+				34E2E9392B007C5600A2462E /* Data */,
 				34648A862AFC9AE800853267 /* GoogleService-Info.plist */,
 				34C0D3E72AFC8D4B00FBB3F5 /* EduConnectApp.swift */,
 				34C0D3EB2AFC8D4C00FBB3F5 /* Assets.xcassets */,
@@ -172,9 +193,38 @@
 			path = EduConnectUITests;
 			sourceTree = "<group>";
 		};
+		34E2E9392B007C5600A2462E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				346DA8FF2B27D4AE008C2D78 /* DataManager.swift */,
+				346DA9032B27D543008C2D78 /* SessionData.swift */,
+				346DA9012B27D4CE008C2D78 /* ListingData.swift */,
+				34E2E93A2B007C7D00A2462E /* UserProfileData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		340B9CDB2B299F2E00B41E1D /* EduConnectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 340B9CE42B299F2E00B41E1D /* Build configuration list for PBXNativeTarget "EduConnectTests" */;
+			buildPhases = (
+				340B9CD82B299F2E00B41E1D /* Sources */,
+				340B9CD92B299F2E00B41E1D /* Frameworks */,
+				340B9CDA2B299F2E00B41E1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				340B9CE12B299F2E00B41E1D /* PBXTargetDependency */,
+			);
+			name = EduConnectTests;
+			productName = EduConnectTests;
+			productReference = 340B9CDC2B299F2E00B41E1D /* EduConnectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		34C0D3E32AFC8D4B00FBB3F5 /* EduConnect */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34C0D4082AFC8D4C00FBB3F5 /* Build configuration list for PBXNativeTarget "EduConnect" */;
@@ -197,42 +247,6 @@
 			productReference = 34C0D3E42AFC8D4B00FBB3F5 /* EduConnect.app */;
 			productType = "com.apple.product-type.application";
 		};
-		34C0D3F32AFC8D4C00FBB3F5 /* EduConnectTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 34C0D40B2AFC8D4C00FBB3F5 /* Build configuration list for PBXNativeTarget "EduConnectTests" */;
-			buildPhases = (
-				34C0D3F02AFC8D4C00FBB3F5 /* Sources */,
-				34C0D3F12AFC8D4C00FBB3F5 /* Frameworks */,
-				34C0D3F22AFC8D4C00FBB3F5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				34C0D3F62AFC8D4C00FBB3F5 /* PBXTargetDependency */,
-			);
-			name = EduConnectTests;
-			productName = EduConnectTests;
-			productReference = 34C0D3F42AFC8D4C00FBB3F5 /* EduConnectTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		34C0D3FD2AFC8D4C00FBB3F5 /* EduConnectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 34C0D40E2AFC8D4C00FBB3F5 /* Build configuration list for PBXNativeTarget "EduConnectUITests" */;
-			buildPhases = (
-				34C0D3FA2AFC8D4C00FBB3F5 /* Sources */,
-				34C0D3FB2AFC8D4C00FBB3F5 /* Frameworks */,
-				34C0D3FC2AFC8D4C00FBB3F5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				34C0D4002AFC8D4C00FBB3F5 /* PBXTargetDependency */,
-			);
-			name = EduConnectUITests;
-			productName = EduConnectUITests;
-			productReference = 34C0D3FE2AFC8D4C00FBB3F5 /* EduConnectUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -240,19 +254,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					340B9CDB2B299F2E00B41E1D = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 34C0D3E32AFC8D4B00FBB3F5;
+					};
 					34C0D3E32AFC8D4B00FBB3F5 = {
 						CreatedOnToolsVersion = 15.0.1;
-					};
-					34C0D3F32AFC8D4C00FBB3F5 = {
-						CreatedOnToolsVersion = 15.0.1;
-						TestTargetID = 34C0D3E32AFC8D4B00FBB3F5;
-					};
-					34C0D3FD2AFC8D4C00FBB3F5 = {
-						CreatedOnToolsVersion = 15.0.1;
-						TestTargetID = 34C0D3E32AFC8D4B00FBB3F5;
 					};
 				};
 			};
@@ -273,13 +283,19 @@
 			projectRoot = "";
 			targets = (
 				34C0D3E32AFC8D4B00FBB3F5 /* EduConnect */,
-				34C0D3F32AFC8D4C00FBB3F5 /* EduConnectTests */,
-				34C0D3FD2AFC8D4C00FBB3F5 /* EduConnectUITests */,
+				340B9CDB2B299F2E00B41E1D /* EduConnectTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		340B9CDA2B299F2E00B41E1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34C0D3E22AFC8D4B00FBB3F5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,69 +306,91 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34C0D3F22AFC8D4C00FBB3F5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34C0D3FC2AFC8D4C00FBB3F5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		340B9CD82B299F2E00B41E1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				340B9CDF2B299F2E00B41E1D /* EduConnectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34C0D3E02AFC8D4B00FBB3F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				34C0D3E82AFC8D4B00FBB3F5 /* EduConnectApp.swift in Sources */,
-				34648A922AFCBACC00853267 /* AuthenticationView.swift in Sources */,
-				34648A9F2AFCCDC300853267 /* RootView.swift in Sources */,
-				34648A9C2AFCC76300853267 /* SignUpEmailView.swift in Sources */,
-				34648A9A2AFCC2A500853267 /* AuthenticationManager.swift in Sources */,
-				34648A982AFCBDF200853267 /* SignInEmailView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34C0D3F02AFC8D4C00FBB3F5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34C0D3F92AFC8D4C00FBB3F5 /* EduConnectTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34C0D3FA2AFC8D4C00FBB3F5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34C0D4052AFC8D4C00FBB3F5 /* EduConnectUITestsLaunchTests.swift in Sources */,
-				34C0D4032AFC8D4C00FBB3F5 /* EduConnectUITests.swift in Sources */,
+				346DA9002B27D4AE008C2D78 /* DataManager.swift in Sources */,
+				340B9D002B29A27700B41E1D /* AlertsView.swift in Sources */,
+				349470112B2A4D5600C441B6 /* ProfileFirstView.swift in Sources */,
+				340B9CFD2B29A27700B41E1D /* ProfileView.swift in Sources */,
+				346DA9022B27D4CE008C2D78 /* ListingData.swift in Sources */,
+				346DA9042B27D543008C2D78 /* SessionData.swift in Sources */,
+				340B9CFF2B29A27700B41E1D /* ScheduleView.swift in Sources */,
+				340B9CFC2B29A27700B41E1D /* HomeView.swift in Sources */,
+				34E2E93B2B007C7D00A2462E /* UserProfileData.swift in Sources */,
+				34648A9F2AFCCDC300853267 /* AuthView.swift in Sources */,
+				340B9CFE2B29A27700B41E1D /* ListingView.swift in Sources */,
+				3494700D2B2A319E00C441B6 /* SignupView.swift in Sources */,
+				340B9D012B29A27700B41E1D /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		34C0D3F62AFC8D4C00FBB3F5 /* PBXTargetDependency */ = {
+		340B9CE12B299F2E00B41E1D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 34C0D3E32AFC8D4B00FBB3F5 /* EduConnect */;
-			targetProxy = 34C0D3F52AFC8D4C00FBB3F5 /* PBXContainerItemProxy */;
-		};
-		34C0D4002AFC8D4C00FBB3F5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 34C0D3E32AFC8D4B00FBB3F5 /* EduConnect */;
-			targetProxy = 34C0D3FF2AFC8D4C00FBB3F5 /* PBXContainerItemProxy */;
+			targetProxy = 340B9CE02B299F2E00B41E1D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		340B9CE22B299F2E00B41E1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CSUF.EduConnectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EduConnect.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EduConnect";
+			};
+			name = Debug;
+		};
+		340B9CE32B299F2E00B41E1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CSUF.EduConnectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EduConnect.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EduConnect";
+			};
+			name = Release;
+		};
 		34C0D4062AFC8D4C00FBB3F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -528,81 +566,18 @@
 			};
 			name = Release;
 		};
-		34C0D40C2AFC8D4C00FBB3F5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = CSUF.EduConnectTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EduConnect.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EduConnect";
-			};
-			name = Debug;
-		};
-		34C0D40D2AFC8D4C00FBB3F5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = CSUF.EduConnectTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EduConnect.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EduConnect";
-			};
-			name = Release;
-		};
-		34C0D40F2AFC8D4C00FBB3F5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = CSUF.EduConnectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EduConnect;
-			};
-			name = Debug;
-		};
-		34C0D4102AFC8D4C00FBB3F5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = CSUF.EduConnectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EduConnect;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		340B9CE42B299F2E00B41E1D /* Build configuration list for PBXNativeTarget "EduConnectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				340B9CE22B299F2E00B41E1D /* Debug */,
+				340B9CE32B299F2E00B41E1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		34C0D3DF2AFC8D4B00FBB3F5 /* Build configuration list for PBXProject "EduConnect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -617,24 +592,6 @@
 			buildConfigurations = (
 				34C0D4092AFC8D4C00FBB3F5 /* Debug */,
 				34C0D40A2AFC8D4C00FBB3F5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		34C0D40B2AFC8D4C00FBB3F5 /* Build configuration list for PBXNativeTarget "EduConnectTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				34C0D40C2AFC8D4C00FBB3F5 /* Debug */,
-				34C0D40D2AFC8D4C00FBB3F5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		34C0D40E2AFC8D4C00FBB3F5 /* Build configuration list for PBXNativeTarget "EduConnectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				34C0D40F2AFC8D4C00FBB3F5 /* Debug */,
-				34C0D4102AFC8D4C00FBB3F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
