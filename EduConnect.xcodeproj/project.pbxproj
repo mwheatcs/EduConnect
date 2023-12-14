@@ -28,6 +28,7 @@
 		34C0D3EC2AFC8D4C00FBB3F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C0D3EB2AFC8D4C00FBB3F5 /* Assets.xcassets */; };
 		34C0D3EF2AFC8D4C00FBB3F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C0D3EE2AFC8D4C00FBB3F5 /* Preview Assets.xcassets */; };
 		34E2E93B2B007C7D00A2462E /* UserProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E2E93A2B007C7D00A2462E /* UserProfileData.swift */; };
+		34F1E1D92B2AC69E0068770B /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F1E1D82B2AC69E0068770B /* PeopleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		34C0D4022AFC8D4C00FBB3F5 /* EduConnectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduConnectUITests.swift; sourceTree = "<group>"; };
 		34C0D4042AFC8D4C00FBB3F5 /* EduConnectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduConnectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		34E2E93A2B007C7D00A2462E /* UserProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileData.swift; sourceTree = "<group>"; };
+		34F1E1D82B2AC69E0068770B /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				340B9CFA2B29A27700B41E1D /* AlertsView.swift */,
 				340B9CFB2B29A27700B41E1D /* Tab.swift */,
 				349470102B2A4D5600C441B6 /* ProfileFirstView.swift */,
+				34F1E1D82B2AC69E0068770B /* PeopleView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				340B9CFC2B29A27700B41E1D /* HomeView.swift in Sources */,
 				34E2E93B2B007C7D00A2462E /* UserProfileData.swift in Sources */,
 				34648A9F2AFCCDC300853267 /* AuthView.swift in Sources */,
+				34F1E1D92B2AC69E0068770B /* PeopleView.swift in Sources */,
 				340B9CFE2B29A27700B41E1D /* ListingView.swift in Sources */,
 				3494700D2B2A319E00C441B6 /* SignupView.swift in Sources */,
 				340B9D012B29A27700B41E1D /* Tab.swift in Sources */,

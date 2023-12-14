@@ -17,7 +17,7 @@ struct ProfileView: View {
     @State private var age = ""
     @State private var grade = ""
     
-    @State private var logoutPopup = false
+    @State private var logoutConfirm = false
     
     var body: some View {
         NavigationStack {
@@ -74,7 +74,7 @@ struct ProfileView: View {
                             RoundedRectangle(cornerRadius:10, style: .continuous).fill(.linearGradient(colors:[.blue], startPoint: .top, endPoint: .bottomTrailing)))
                 }
                 Button {
-                    logoutPopup.toggle()
+                    logoutConfirm.toggle()
                 } label: {
                     Text("Log Out")
                         .foregroundColor(.white)
@@ -99,44 +99,32 @@ struct ProfileView: View {
             grade = String(data.grade)
             zip =  String(data.zip)
         })
-        .fullScreenCover(isPresented: $logoutPopup){
-            LogoutPrompt
+        .confirmationDialog("Confirm Logout?", isPresented: $logoutConfirm) {
+            Button {
+                
+            } label: {
+                Text("Cancel")
+                    .foregroundColor(.white)
+                    .bold()
+                    .frame(width: 200, height: 40)
+                    .background(
+                        RoundedRectangle(cornerRadius:10, style: .continuous).fill(.linearGradient(colors:[.blue], startPoint: .top, endPoint: .bottomTrailing)))
+            }
+            Button {
+                logout()
+            } label: {
+                Text("Confirm Log Out")
+                    .foregroundColor(.white)
+                    .bold()
+                    .frame(width: 200, height: 40)
+                    .background(
+                        RoundedRectangle(cornerRadius:10, style: .continuous).fill(.linearGradient(colors:[.red], startPoint: .top, endPoint: .bottomTrailing)))
+            }
+
         }
         
     }
-    var LogoutPrompt: some View {
-        NavigationView {
-            VStack{
-                Text("Confirm Logout?")
-            
-                Button {
-                    logoutPopup.toggle()
-                } label: {
-                    Text("Cancel")
-                        .foregroundColor(.white)
-                        .bold()
-                        .frame(width: 200, height: 40)
-                        .background(
-                            RoundedRectangle(cornerRadius:10, style: .continuous).fill(.linearGradient(colors:[.blue], startPoint: .top, endPoint: .bottomTrailing)))
-                }
-                
-                Button {
-                    logoutPopup.toggle()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.00001) {
-                        logout()
-                    }
-                } label: {
-                    Text("Confirm Log Out")
-                        .foregroundColor(.white)
-                        .bold()
-                        .frame(width: 200, height: 40)
-                        .background(
-                            RoundedRectangle(cornerRadius:10, style: .continuous).fill(.linearGradient(colors:[.red], startPoint: .top, endPoint: .bottomTrailing)))
-                }
-            }
-        }
-    }
-    
+
     func logout(){
         guard let result = try? Auth.auth().signOut() else {
             print("Failed to log out!")

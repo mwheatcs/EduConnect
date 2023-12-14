@@ -19,10 +19,10 @@ struct Tab: View {
                         Image(systemName: "house.fill")
                         Text("Home")
                     }
-                AlertsView()
+                PeopleView()
                     .tabItem {
-                        Image(systemName: "bell.fill")
-                        Text("Alerts")
+                        Image(systemName: "person.3.fill")
+                        Text("People")
                     }
                 ListingView()
                     .tabItem {
