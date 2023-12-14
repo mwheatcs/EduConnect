@@ -130,8 +130,9 @@ struct ProfileView: View {
                 
                 Button {
                     logoutPopup.toggle()
-
-                    logout()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.00001) {
+                        logout()
+                    }
                 } label: {
                     Text("Confirm Log Out")
                         .foregroundColor(.white)
