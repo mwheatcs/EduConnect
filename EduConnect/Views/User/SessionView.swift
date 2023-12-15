@@ -35,9 +35,9 @@ struct ScheduleView: View {
                             Text("Subjects: \(subjects)")
                             Text(String(format: "Price: %.2f", session.totalCost))
                             Button {
-                                //Cancel Request
+                                cancelSession(id: session.id)
                             } label: {
-                                Text("Request Cancellation")
+                                Text("Cancel")
                                     .foregroundColor(.white)
                                     .bold()
                                     .frame(width: 200, height: 40)
@@ -63,9 +63,9 @@ struct ScheduleView: View {
                             Text("Subjects: \(subjects)")
                             Text(String(format: "Price: %.2f", session.totalCost))
                             Button {
-                                //Cancel Request
+                                cancelSession(id: session.id)
                             } label: {
-                                Text("Request Cancellation")
+                                Text("Cancel")
                                     .foregroundColor(.white)
                                     .bold()
                                     .frame(width: 200, height: 40)
@@ -77,6 +77,11 @@ struct ScheduleView: View {
                     }
                 }
             }
+    }
+    func cancelSession(id: String?){
+        if let docID = id {
+            manager.removeSession(docID: docID)
+        }
     }
 }
 

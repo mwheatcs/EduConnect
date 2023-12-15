@@ -11,6 +11,10 @@ import SwiftUI
 struct ListingView: View {
     @EnvironmentObject var manager: Manager
     @State var showAddListing = false
+    
+    @State private var toastData = ToastDataModel(title: "Success", image: "checkmark", color: .white)
+    @State private var showToast = false
+
     var body: some View {
         VStack {
             HStack {
@@ -100,11 +104,14 @@ struct ListingView: View {
         .fullScreenCover(isPresented: $showAddListing){
             AddListingView()
         }
+        .toast(toastView: Toast(dataModel: toastData, show: $showToast), show: $showToast)
     }
         
     func removeListing(id: String?){
         if let docID =  id {
             manager.removeListing(docID: docID)
+            toastData = ToastDataModel(title: "Listing successfully removed!", image: "checkmark", color: .green)
+            showToast.toggle()
         }
     }
     
@@ -112,6 +119,8 @@ struct ListingView: View {
         if let docID =  listing.id {
             manager.removeListing(docID: docID)
             manager.createSession(sessionData: SessionData(tutor: listing.tutor, student: manager.userID, start: listing.start, end: listing.end, rate: listing.rate, subjects: listing.subjects))
+            toastData = ToastDataModel(title: "Listing successfully reserved!", image: "checkmark", color: .green)
+            showToast.toggle()
         }
     }
     

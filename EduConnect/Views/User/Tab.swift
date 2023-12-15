@@ -39,7 +39,7 @@ struct Tab: View {
                         Image(systemName: "person.fill")
                         Text("My Profile")
                     }
-            }                .background(.linearGradient(colors: [.blue, .green], startPoint: .topTrailing, endPoint: .bottomLeading))
+            }                
                 .fullScreenCover(isPresented: $manager.loggedOut){
                     AuthView()
                 }

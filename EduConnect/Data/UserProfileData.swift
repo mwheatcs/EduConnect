@@ -38,7 +38,7 @@ enum Grade: String, Codable, CaseIterable, Identifiable, CustomStringConvertible
     var id: RawValue {rawValue}
 }
 class UserProfile: ObservableObject, Codable, Identifiable{
-    static let noProfile = UserProfile("No Profile Found", 0, .None, 00000, "")
+    static let noProfile = UserProfile("No Profile Found", 0, .None, 00000, "", [])
 
     @DocumentID var id: String?
     var name: String
@@ -46,8 +46,9 @@ class UserProfile: ObservableObject, Codable, Identifiable{
     var grade: Grade
     var zip: Int
     var biography: String
+    var friends: [String]
     
-    init(_ name: String, _ age: Int, _ grade: Grade, _ zip: Int, _ biography: String) {
+    init(_ name: String, _ age: Int, _ grade: Grade, _ zip: Int, _ biography: String, _ friends: [String]) {
         
         self.id = UUID().uuidString
         self.name = name
@@ -55,7 +56,6 @@ class UserProfile: ObservableObject, Codable, Identifiable{
         self.grade = grade
         self.zip = zip
         self.biography = biography
+        self.friends = friends
     }
-    
-    
 }

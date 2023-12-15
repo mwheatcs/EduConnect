@@ -11,6 +11,7 @@ import FirebaseCore
 @main
 struct EduConnectApp: App {
     @StateObject var manager = Manager()
+        
     init() {
         FirebaseApp.configure()
     }
@@ -22,6 +23,5 @@ struct EduConnectApp: App {
             }
         }
         .environmentObject(manager)
-        
     }
 }

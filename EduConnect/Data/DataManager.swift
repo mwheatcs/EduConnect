@@ -10,6 +10,8 @@ import Firebase
 import FirebaseAuth
 
 class Manager: ObservableObject {
+    @Published var requests: [String] = []
+    @Published var friends: [UserProfile] = []
     @Published var listings: [ListingData] = []
     @Published var myListings: [ListingData] = []
     @Published var tutoringSessions: [SessionData] = []
@@ -37,6 +39,15 @@ class Manager: ObservableObject {
             }
         }
     }
+
+  
+    func removeSession(docID: String) {
+        let db = Firestore.firestore()
+        
+        let document = db.collection("Session").document(docID)
+
+        document.delete()
+    }
     
     func createSession(sessionData: SessionData){
         let db = Firestore.firestore()
@@ -48,9 +59,25 @@ class Manager: ObservableObject {
         } catch {
             print("Failed to create session!")
         }
-
     }
     
+    func addFriend(id: String){
+        let db = Firestore.firestore()
+        
+        guard var otherUserNewFriends = self.userProfiles[id]?.friends else {
+            print("User doesn't exist")
+            return
+        }
+        
+        otherUserNewFriends.append(userID)
+        db.collection("Profile").document(id).updateData(["friends":otherUserNewFriends])
+
+        
+        var currentUserNewFriends = loggedInUserData?.friends ?? []
+        currentUserNewFriends.append(id)
+        db.collection("Profile").document(userID).updateData(["friends" : currentUserNewFriends])
+        
+    }
     func removeListing(docID: String) {
         let db = Firestore.firestore()
         

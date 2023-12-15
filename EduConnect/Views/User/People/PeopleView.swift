@@ -10,6 +10,8 @@ import SwiftUI
 struct PeopleView: View {
     @EnvironmentObject var manager: Manager
     
+    @State var showAddFriend: Bool = false
+     
     var body: some View {
         VStack {
             HStack {

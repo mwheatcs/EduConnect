@@ -65,7 +65,7 @@ struct ListingData: Identifiable, Codable {
     var notes: String = ""
     
     var totalCost: Float {
-        return rate * Float(start - end) / 3600
+        return abs(rate * Float(start - end) / 3600)
     }
     
     init(tutor: String, start: Int, end: Int, rate: Float, subjects: [Subject]) {

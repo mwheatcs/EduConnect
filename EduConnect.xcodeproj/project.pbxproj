@@ -15,6 +15,7 @@
 		340B9D002B29A27700B41E1D /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340B9CFA2B29A27700B41E1D /* AlertsView.swift */; };
 		340B9D012B29A27700B41E1D /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340B9CFB2B29A27700B41E1D /* Tab.swift */; };
 		344B8A102B2B620500414229 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B8A0F2B2B620500414229 /* NotificationManager.swift */; };
+		344B8A1A2B2BD6B600414229 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B8A192B2BD6B600414229 /* Toast.swift */; };
 		34648A872AFC9AE800853267 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34648A862AFC9AE800853267 /* GoogleService-Info.plist */; };
 		34648A8A2AFC9FC100853267 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 34648A892AFC9FC100853267 /* FirebaseFirestore */; };
 		34648A8C2AFC9FC100853267 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 34648A8B2AFC9FC100853267 /* FirebaseInAppMessaging-Beta */; };
@@ -53,6 +54,7 @@
 		340B9CFA2B29A27700B41E1D /* AlertsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
 		340B9CFB2B29A27700B41E1D /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		344B8A0F2B2B620500414229 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		344B8A192B2BD6B600414229 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		34648A862AFC9AE800853267 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34648A9E2AFCCDC300853267 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		346DA8FF2B27D4AE008C2D78 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				3494700F2B2A35BD00C441B6 /* User */,
 				3494700E2B2A35A300C441B6 /* Auth */,
+				344B8A192B2BD6B600414229 /* Toast.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +130,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		344B8A182B2BCE2F00414229 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				34F1E1D82B2AC69E0068770B /* PeopleView.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
 		34648A8D2AFCA70000853267 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +157,7 @@
 		3494700F2B2A35BD00C441B6 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				344B8A182B2BCE2F00414229 /* People */,
 				344B8A0E2B2B61CC00414229 /* Home */,
 				344B8A0D2B2B61BA00414229 /* Listing */,
 				340B9CF72B29A27700B41E1D /* ProfileView.swift */,
@@ -153,7 +165,6 @@
 				340B9CFA2B29A27700B41E1D /* AlertsView.swift */,
 				340B9CFB2B29A27700B41E1D /* Tab.swift */,
 				349470102B2A4D5600C441B6 /* ProfileFirstView.swift */,
-				34F1E1D82B2AC69E0068770B /* PeopleView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -257,6 +268,7 @@
 				34C0D3E02AFC8D4B00FBB3F5 /* Sources */,
 				34C0D3E12AFC8D4B00FBB3F5 /* Frameworks */,
 				34C0D3E22AFC8D4B00FBB3F5 /* Resources */,
+				344B8A112B2BB1F500414229 /* Multi Sim */,
 			);
 			buildRules = (
 			);
@@ -333,6 +345,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		344B8A112B2BB1F500414229 /* Multi Sim */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Multi Sim";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "custom_sim=`xcrun simctl list | grep ‘Iphone 2’ | awk -F’[()]’ ‘{print $2}’`\nif [ ! -z “${custom_sim}” ] && [ “${TARGET_DEVICE_IDENTIFIER}” = “${custom_sim}” ]; then\n/bin/sh multipleSimulatorsStartup.sh &\nfi\n\ncustom_sim=`xcrun simctl list | grep ‘iphone 15 plus’ | awk -F’[()]’ ‘{print $2}’`\nif [ ! -z “${custom_sim}” ] && [ “${TARGET_DEVICE_IDENTIFIER}” = “${custom_sim}” ]; then\n/bin/sh multipleSimulatorsStartup.sh &\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		340B9CD82B299F2E00B41E1D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -357,6 +390,7 @@
 				340B9CFF2B29A27700B41E1D /* SessionView.swift in Sources */,
 				340B9CFC2B29A27700B41E1D /* HomeView.swift in Sources */,
 				34E2E93B2B007C7D00A2462E /* UserProfileData.swift in Sources */,
+				344B8A1A2B2BD6B600414229 /* Toast.swift in Sources */,
 				34648A9F2AFCCDC300853267 /* AuthView.swift in Sources */,
 				34F1E1D92B2AC69E0068770B /* PeopleView.swift in Sources */,
 				340B9CFE2B29A27700B41E1D /* ListingView.swift in Sources */,

@@ -22,6 +22,8 @@ struct ProfileView: View {
     
     @State private var logoutConfirm = false
     
+    @State private var friends: [String] = []
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -124,7 +126,8 @@ struct ProfileView: View {
             grade = UserProfile.noProfile.grade
             zip = String(UserProfile.noProfile.zip)
             biography = UserProfile.noProfile.biography
-
+            friends = []
+            
             return
         }
         guard let data = manager.loggedInUserData else{
@@ -136,6 +139,7 @@ struct ProfileView: View {
         grade = grade
         zip =  String(data.zip)
         biography = data.biography
+        friends = data.friends
     }
     
     func logout(){
@@ -165,7 +169,7 @@ struct ProfileView: View {
         let ageNumber = Int(age) ?? 0
         let zipNumber = Int(zip) ?? 00000
         
-        let user = UserProfile(name, ageNumber, grade, zipNumber, biography)
+        let user = UserProfile(name, ageNumber, grade, zipNumber, biography, friends)
         
         manager.updateProfile(profile: user)
     }

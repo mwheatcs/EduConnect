@@ -91,7 +91,7 @@ struct ProfileFirstView: View {
         let ageNumber = Int(age) ?? 0
         let zipNumber = Int(zip) ?? 00000
         
-        let user = UserProfile(name, ageNumber, grade, zipNumber, "")
+        let user = UserProfile(name, ageNumber, grade, zipNumber, "", [])
         
         manager.updateProfile(profile: user)
     }

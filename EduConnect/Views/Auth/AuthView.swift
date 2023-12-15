@@ -9,8 +9,13 @@ import SwiftUI
 import FirebaseAuth
 
 struct AuthView: View {
+    @EnvironmentObject var manager: Manager
+    
     @State private var email = ""
     @State private var password = ""
+    
+    @State private var toastData = ToastDataModel(title: "Success", image: "checkmark", color: .white)
+    @State private var showToast = false
     
     var body: some View {
         NavigationView{
@@ -57,18 +62,25 @@ struct AuthView: View {
                     Spacer()
                 }
             }
+            .toast(toastView: Toast(dataModel: toastData, show: $showToast), show: $showToast)
         }
     }
 
     
     func login(){
-        print("\(email) + \(password)")
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if error != nil {
                 print(error!.localizedDescription)
+                toastData = ToastDataModel(title: "Incorrect username or password!", image: "xmark.seal", color: .red)
+                showToast.toggle()
+                return
+            } else {
+                toastData = ToastDataModel(title: "Succesfully Logged in!", image: "checkmark.seal", color: .green)
+                showToast.toggle()
             }
-            print(result)
         }
+
+
     }
 }
 extension UIImage {
@@ -80,3 +92,5 @@ extension UIImage {
         return image.withRenderingMode(renderingMode)
     }
 }
+
+

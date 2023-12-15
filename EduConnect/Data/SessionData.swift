@@ -18,7 +18,7 @@ struct SessionData: Identifiable, Codable{
     var subjects: [Subject]
     
     var totalCost: Float {
-        return rate * Float(start - end) / 3600
+        return abs(rate * Float(start - end) / 3600)
     }
     
     init(tutor: String, student: String, start: Int, end: Int, rate: Float, subjects: [Subject]) {
